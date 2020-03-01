@@ -57,7 +57,7 @@ function LoadAssetCustom( name, asset, type, options ) {
 
 function PlaySound( name, options ) {
 	if( assetReference[ name ] ) {
-		assetReference[ name ].volume = options.volume || 1;
+		assetReference[ name ].volume = options.volume === undefined || options.volume === null ? 1 : options.volume;
 		assetReference[ name ].play();
 	}
 }
